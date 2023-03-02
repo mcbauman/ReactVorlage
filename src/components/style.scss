@@ -1,0 +1,56 @@
+body{
+    margin:0;
+    padding: 0;
+    background-color: rgb(215, 215, 215);
+    display: grid;
+    grid-template-areas: "header header"
+    "menu main";
+    grid-template-rows: 5vh 95vh;
+    grid-template-columns: 300px auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --maincolor:rgb(231, 217, 207);
+    --invertedMaincolor:rgb(106, 29, 106);
+    --secondaryColor:rgb(250, 192, 83);
+    --invertedSecondaryColor:rgb(71, 54, 71);
+    --gradient:rgba(50, 50, 50, 0.5);
+    --gradientInner:rgba(0, 0, 0, 0.5);
+    background-color: var(--maincolor);
+    color:var(--invertedMaincolor);
+    header{
+        display: flex;
+        align-items: center;
+        grid-area: header;
+        background: linear-gradient(22deg,var(--gradient), var(--gradientInner), var(--gradient));
+        color:var(--invertedSecondaryColor);
+        button{
+            background-color: rgba(240, 248, 255, 0);
+            color: var(--invertedSecondaryColor);
+            border: none;
+            svg{
+                font-size: 25px;
+            }
+            &:hover{
+                color: var(--invertedMaincolor);
+            }
+        }
+    }
+    aside{
+        grid-area: menu;
+        background: linear-gradient(22deg,var(--gradient), var(--gradientInner), var(--gradient));
+        color:var(--invertedSecondaryColor);
+        nav{
+            display: flex;
+            flex-direction: column;
+            a{
+                color: var(--invertedSecondaryColor);
+                text-decoration: none;
+                &:hover{
+                    color: var(--invertedMaincolor);
+                }
+            }
+        }
+    }
+    main{
+        grid-area: main;
+    }
+}
